@@ -24,6 +24,8 @@ def get_target_email(qty=target_email_qty):
         target_emails.append(r.read("//input[@id='fe_text']"))
         print("[DEBUG] Copied email address")
 
+    print("[DEBUG] Emails obtained: ", target_emails)
+    
     return target_emails
 
 
@@ -88,7 +90,7 @@ def get_screenshot(name="result.png"):
     print("[DEBUG] Screenshot taken")
 
 if __name__ == "__main__":
-    r.init(turbo_mode=True, visual_automation=True)
+    r.init(turbo_mode=True, headless_mode=True)
 
     target_emails = get_target_email(2)
     # Manual email sending
